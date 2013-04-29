@@ -1,3 +1,5 @@
+var args = arguments[0] || {};
+
 // Originally derived from example code from Appcelerator developer relations.
 $.windowStack = [];
 
@@ -105,3 +107,7 @@ Object.defineProperty($, "length", {
         return $.windowStack.length; 
     }
 });
+
+if (args.window) {
+    exports.open(args.window);
+}
